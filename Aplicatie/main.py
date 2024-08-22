@@ -3,8 +3,7 @@ from Venit import Venit
 from Plata import Plata
 import csv
 
-def prelucrareCSV():
-    buget=Buget(1000)
+def prelucrareCSV(buget):
     
     with open('C:\\Users\\paul1\\Desktop\\Proiect gestionare buget\\Aplicatie\\dateNevoi.csv', mode ='r')as file:
         csvFile = csv.reader(file)
@@ -24,17 +23,21 @@ def prelucrareCSV():
         for lines in csvFile:
             buget.venitFondEconomii.adaugaPlata(Plata(lines[0],lines[1],lines[2]))
 
-    print(buget)
+    
 
-    buget.venitNevoi.sorteazaPlati("valoare")
-    print(buget)
+    # buget.venitNevoi.sorteazaPlati("valoare")
+    # print(buget)
 
-    buget.venitNevoi.sorteazaPlati("valoare",True)
-    print(buget)
+    # buget.venitNevoi.sorteazaPlati("data",True)
+    # print(buget)
 
 
 def main():
-    prelucrareCSV()
+    buget=Buget(1000)
+    prelucrareCSV(buget)
+    # print(buget)
+
+    buget.salvareInCSV()
 
 if __name__ == "__main__":
     main()
