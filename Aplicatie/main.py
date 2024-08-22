@@ -26,6 +26,13 @@ def prelucrareCSV():
 
     print(buget)
 
+    buget.venitNevoi.sorteazaPlati("valoare")
+    print(buget)
+
+    buget.venitNevoi.sorteazaPlati("valoare",True)
+    print(buget)
+
+
 def main():
     prelucrareCSV()
 
