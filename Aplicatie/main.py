@@ -1,3 +1,4 @@
+from datetime import date
 from Buget import Buget
 from Venit import Venit
 from Plata import Plata
@@ -23,8 +24,6 @@ def prelucrareCSV(buget):
         for lines in csvFile:
             buget.venitFondEconomii.adaugaPlata(Plata(lines[0],lines[1],lines[2]))
 
-    
-
     # buget.venitNevoi.sorteazaPlati("valoare")
     # print(buget)
 
@@ -38,6 +37,13 @@ def main():
     # print(buget)
 
     buget.salvareInCSV()
+    buget.salvareInCSV3()
+
+    # buget.venitNevoi.sorteazaPlati("data",True,buget.combinaPlati)
+
+    for plata in buget.combinaPlati():
+        print(plata)
+    
 
 if __name__ == "__main__":
     main()

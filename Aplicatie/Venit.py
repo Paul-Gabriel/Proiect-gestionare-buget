@@ -18,7 +18,10 @@ class Venit:
     def getBaniRamasi(self):
         return self.getBaniAlocati() - self.getBaniConsumati()
     
-    def sorteazaPlati(self, criteriu, ordonare=False):
+    def sorteazaPlati(self, criteriu="data", ordonare=False):#, lista_plati=None):
+        # if lista_plati is None:
+        #     lista_plati = self.listaPlati
+
         if criteriu == "tip":
             self.listaPlati.sort(key=lambda p: p.tip, reverse=ordonare)
         elif criteriu == "valoare":
@@ -27,6 +30,8 @@ class Venit:
             self.listaPlati.sort(key=lambda p: p.data, reverse=ordonare)
         else:
             print("Criteriu necunoscut. Plățile nu au fost sortate.")
+
+        # return lista_plati
 
     def __str__(self):
         plati_str = "\n".join([str(plata) for plata in self.listaPlati])
