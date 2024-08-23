@@ -18,7 +18,7 @@ class Buget:
         return self.venitFondEconomii.listaPlati + self.venitNevoi.listaPlati + self.venitDorinte.listaPlati
 
     def salvareInCSV3(self):
-        with open('C:\\Users\\paul1\\Desktop\\Proiect gestionare buget\\Aplicatie\\platiSalvateSeparat.csv', 'w', newline='') as file:
+        with open('C:\\Users\\paul1\\Desktop\\Proiect gestionare buget\\Aplicatie\\Fisiere_CSV\\platiSalvateSeparat.csv', 'w', newline='') as file:
             writer = csv.writer(file)
 
             writer.writerow(['Plati nevoi:'])
@@ -46,7 +46,7 @@ class Buget:
                 writer.writerow(['Nicio plata efectuata.'])
 
     def salvareInCSV(self):
-        with open('C:\\Users\\paul1\\Desktop\\Proiect gestionare buget\\Aplicatie\\platiSalvate.csv', 'w', newline='') as file:
+        with open('C:\\Users\\paul1\\Desktop\\Proiect gestionare buget\\Aplicatie\\Fisiere_CSV\\platiSalvate.csv', 'w', newline='') as file:
             writer = csv.writer(file)
             writer.writerow(['tip', 'valoare', 'data'])
             if(self.combinaPlati()):

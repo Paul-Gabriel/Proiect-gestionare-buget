@@ -18,20 +18,39 @@ class Venit:
     def getBaniRamasi(self):
         return self.getBaniAlocati() - self.getBaniConsumati()
     
-    def sorteazaPlati(self, criteriu="data", ordonare=False):#, lista_plati=None):
-        # if lista_plati is None:
-        #     lista_plati = self.listaPlati
+    def sorteazaPlati(self, criteriu="data", ordonare=False, lista_plati=None):
+        if lista_plati is None:
+            lista_plati = self.listaPlati
 
         if criteriu == "tip":
-            self.listaPlati.sort(key=lambda p: p.tip, reverse=ordonare)
+            lista_plati.sort(key=lambda p: p.tip, reverse = ordonare)
         elif criteriu == "valoare":
-            self.listaPlati.sort(key=lambda p: p.valoare, reverse=ordonare)
+            lista_plati.sort(key=lambda p: p.valoare, reverse = ordonare)
         elif criteriu == "data":
-            self.listaPlati.sort(key=lambda p: p.data, reverse=ordonare)
+            lista_plati.sort(key=lambda p: p.data, reverse = ordonare)
         else:
             print("Criteriu necunoscut. Plățile nu au fost sortate.")
 
-        # return lista_plati
+        return lista_plati
+
+    def afisarePlatiDupaCriteriu(self, criteriu1, criteriu2, lista_plati=None):
+        if lista_plati is None:
+            lista_plati = self.listaPlati
+        
+        if criteriu1 == "tip":
+            for plata in lista_plati:
+                if criteriu2 == plata.tip:
+                    print(plata)
+        elif criteriu1 == "valoare":
+            for plata in lista_plati:
+                if criteriu2 == plata.valoare:
+                    print(plata)
+        elif criteriu1 == "data":
+            for plata in lista_plati:
+                if criteriu2 == str(plata.data.strftime("%Y-%m-%d")):
+                    print(plata)
+        else:
+            print("Criteriu necunoscut. Plățile nu au fost sortate.")
 
     def __str__(self):
         plati_str = "\n".join([str(plata) for plata in self.listaPlati])
