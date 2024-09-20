@@ -1,7 +1,7 @@
 from datetime import date
-from Buget import Buget
-from Venit import Venit
-from Plata import Plata
+from Program.Buget import Buget
+from Program.Venit import Venit
+from Program.Plata import Plata
 import csv
 
 def prelucrareCSV(buget):

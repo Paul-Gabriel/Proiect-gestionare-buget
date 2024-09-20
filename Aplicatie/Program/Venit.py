@@ -1,4 +1,4 @@
-from Plata import Plata
+from Program.Plata import Plata
 
 class Venit:
     def __init__(self, baniAlocati):

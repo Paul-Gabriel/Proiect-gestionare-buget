@@ -1,5 +1,5 @@
 import csv
-from Venit import Venit
+from Program.Venit import Venit
 
 class Buget:
     def __init__(self,venit):
